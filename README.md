@@ -1,4 +1,3 @@
-# Linux-learning-project1
 # Question 1: Set Up Your DevOps Project Structure
 
 ## Objective
@@ -10,10 +9,10 @@ Create a complete project directory from scratch, apply correct permissions, and
 Command used:
 
 ```bash
-mkdir -p /home/ec2-user/webapp/scripts /home/ec2-user/webapp/logs /home/ec2-user/webapp/config/
+mkdir -p /home/suhas/webapp/scripts /home/suhas/webapp/logs /home/suhas/webapp/config/
 ```
-- 
-This creates the main `/home/ec2-user/webapp/` directory with three subdirectories:
+
+This creates the main `/home/suhas/webapp/` directory with three subdirectories:
 
 - `scripts/`
 - `logs/`
@@ -24,7 +23,7 @@ This creates the main `/home/ec2-user/webapp/` directory with three subdirectori
 Command used:
 
 ```bash
-cat > /home/ec2-user/webapp/config/app.conf
+cat > /home/suhas/webapp/config/app.conf
 ```
 
 Content added:
@@ -39,7 +38,7 @@ The file was saved using `Ctrl+D`.
 Verification command:
 
 ```bash
-cat /home/ec2-user/webapp/config/app.conf
+cat /home/suhas/webapp/config/app.conf
 ```
 
 Output:
@@ -52,7 +51,7 @@ PORT=8080
 File details:
 
 ```bash
--rw-r--r-- 1 root root 26 May 10 10:45 /home/ec2-user/webapp/config/app.conf
+-rw-r--r-- 1 suhas suhas 26 May 10 11:13 /home/suhas/webapp/config/app.conf
 ```
 
 ## 3. Create Empty Log File
@@ -60,19 +59,19 @@ File details:
 Command used:
 
 ```bash
-touch /home/ec2-user/webapp/logs/app.log
+touch /home/suhas/webapp/logs/app.log
 ```
 
 Verification command:
 
 ```bash
-ls -l /home/ec2-user/webapp/logs/app.log
+ls -l /home/suhas/webapp/logs/app.log
 ```
 
 Output:
 
 ```bash
--rw-r--r-- 1 root root 0 May 10 10:47 /home/ec2-user/webapp/logs/app.log
+-rw-r--r-- 1 suhas suhas 0 May 10 11:14 /home/suhas/webapp/logs/app.log
 ```
 
 The file size is `0` bytes, so the log file is empty as required.
@@ -82,8 +81,8 @@ The file size is `0` bytes, so the log file is empty as required.
 Commands used:
 
 ```bash
-chmod 755 /home/ec2-user/webapp/scripts
-chmod 644 /home/ec2-user/webapp/config/app.conf
+chmod 755 /home/suhas/webapp/scripts
+chmod 644 /home/suhas/webapp/config/app.conf
 ```
 
 ### Permission Explanation
@@ -117,7 +116,7 @@ This is shown as:
 Command used:
 
 ```bash
-chown -R root:root /home/ec2-user/webapp/
+sudo chown -R root:root /home/suhas/webapp/
 ```
 
 This changes ownership of the entire `webapp/` directory and everything inside it to user `root` and group `root`.
@@ -127,27 +126,27 @@ This changes ownership of the entire `webapp/` directory and everything inside i
 Verification command:
 
 ```bash
-ls -lR /home/ec2-user/webapp/
+ls -lR /home/suhas/webapp/
 ```
 
 Output:
 
 ```bash
-/home/ec2-user/webapp/:
+/home/suhas/webapp/:
 total 12
-drwxr-xr-x 2 root root 4096 May 10 10:45 config
-drwxr-xr-x 2 root root 4096 May 10 10:47 logs
-drwxr-xr-x 2 root root 4096 May 10 10:43 scripts
+drwxr-xr-x 2 root root 4096 May 10 11:13 config
+drwxr-xr-x 2 root root 4096 May 10 11:14 logs
+drwxr-xr-x 2 root root 4096 May 10 11:11 scripts
 
-/home/ec2-user/webapp/config:
+/home/suhas/webapp/config:
 total 4
--rw-r--r-- 1 root root 26 May 10 10:45 app.conf
+-rw-r--r-- 1 root root 26 May 10 11:13 app.conf
 
-/home/ec2-user/webapp/logs:
+/home/suhas/webapp/logs:
 total 0
--rw-r--r-- 1 root root 0 May 10 10:47 app.log
+-rw-r--r-- 1 root root 0 May 10 11:14 app.log
 
-/home/ec2-user/webapp/scripts:
+/home/suhas/webapp/scripts:
 total 0
 ```
 
